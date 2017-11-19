@@ -275,3 +275,23 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
   min-height: 40px !important;
 }
+
+@media screen and (min-width: 1000px) {
+  .youtube-video {
+    width: 853px;
+    height: 505px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .youtube-video {
+    width: 560px;
+    height: 340px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .youtube-video {
+    width: 350px;
+    height: 213px;
+  }
+}

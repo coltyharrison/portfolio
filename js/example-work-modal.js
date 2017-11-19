@@ -12,11 +12,11 @@ class ModalVideo extends React.Component {
   }
   render() {
     return (
-      <iframe width="560"
-        height="315"
+      <iframe
         src={ this.state.video }
         frameborder="0"
-        allowfullscreen>
+        allowfullscreen
+        className="youtube-video">
       </iframe>
     )
   }
