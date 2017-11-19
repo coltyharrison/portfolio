@@ -59,13 +59,13 @@ html {
 }
 
 body {
-  font-family: 'Cardo', serif;
+  font-family: 'Philosopher', sans-serif;
   margin: 0;
   background-color: rgb(16, 37, 55);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   letter-spacing: .1rem;
 }
 
@@ -169,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
 .section__exampleTitle{
   font-size: 3.4rem;
   text-align: center;
-  text-transform: uppercase;
+  text-shadow: 2px 2px 2px rgb(16, 37, 55);
   width: 90%;
 }
 
