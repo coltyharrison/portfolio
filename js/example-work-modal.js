@@ -1,21 +1,31 @@
 import React from 'react';
 
-class ExampleWorkModal extends React.Component {
+class ModalVideo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      'video': null
+    };
+  }
+  componentWillMount() {
+    this.setState({'video': this.props.video})
+  }
+  render() {
+    return (
+      <iframe width="560"
+        height="315"
+        src={ this.state.video }
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    )
+  }
+}
 
+class ExampleWorkModal extends React.Component {
   render() {
     let example = this.props.example;
     let modalClass = this.props.open ? 'modal--open' : 'modal--closed';
-    let embeds = [];
-    for (var i = 0; i < example.embed.length; i++) {
-        embeds.push(
-          <iframe width="560"
-            height="315"
-            src={ example.embed[i] }
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        )
-      }
 
     return (
       <div className={"background--darkBlue " + modalClass}>
@@ -33,7 +43,12 @@ class ExampleWorkModal extends React.Component {
           <h6>
             -- { example.subtitle }
           </h6>
-          { embeds }
+          { example.embed.map( (video, idx) => {
+              return (
+                <ModalVideo video={video} key={"video" + idx} />
+              )
+            })
+          }
 
           <p className="modal__description">
             { example.desc }

@@ -5,7 +5,7 @@ class ExampleWork extends React.Component {
     super(props);
     this.state = {
       'modalOpen': false,
-      'selectedExample': this.props.work[0]
+      'selectedExample': null
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -24,6 +24,11 @@ class ExampleWork extends React.Component {
     });
   }
   render() {
+    let modal = this.state.modalOpen ?
+        <ExampleWorkModal example={this.state.selectedExample}
+          open={this.state.modalOpen}
+          closeModal={this.closeModal}/> :
+        <div></div>
     return (
       <span>
         <section className="section section--alignCentered section--description">
@@ -35,9 +40,7 @@ class ExampleWork extends React.Component {
             })
           }
         </section>
-        <ExampleWorkModal example={this.state.selectedExample}
-          open={this.state.modalOpen}
-          closeModal={this.closeModal}/>
+        { modal }
       </span>
     )
   }
